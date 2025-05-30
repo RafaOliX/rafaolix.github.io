@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rafaolix.links - Enlaces de rafael Andrés Olivares</title>
+    <link rel="stylesheet" href="./assets/output.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="
+  min-h-dvh
+  bg-gradient-to-b from-black via-sky-950 to-emerald-900
+
+">
+  <header class="text-white ">
+    <img alt="olivares sonriendo" src="./assets/olivares1.jpg"
+        class="h-full w-full object-cover object-top rounded-4xl m-10 shadow-lg mx-auto animate-pulse-fade-in max-w-xl mx-auto"
+  style="mask-image: radial-gradient(circle at 50% -200%, white 70%, transparent 98%); -webkit-mask-image: radial-gradient(circle at 50% -70%, white 70%, transparent 96%);"
+/>
+
+    <header class="flex flex-col justify-center items-center mb-8 -mt-4">
+      <span class="
+        text-sky-400 text-xl
+        font-mono px-3 py-1
+        border border-sky-500/50 rounded-full flex items-center justify-center shadow-sm
+        bg-black/65
+        cursor-crosshair top-115 absolute
+        z-10
+      ">
+        @rafaolix
+        <svg class="ml-1 w-5 h-5 text-sky-400 inline" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <path fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707a1 1 0 00-1.414-1.414L9 11.172l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd" />
+        </svg>
+      </span>
+
+      <h1 class="text-3xl font-extrabold leading-tight mt-1 font-display">
+        Rafael Andrés Olivares Criollo
+      </h1>
+    </header>
+
+    <section class="flex gap-2 justify-center">
+      <!-- GitHub -->
+
+      <a class="bg-zinc-900 social-button animate-slide-up-fade animate-delay-100" href="https://github.com/rafaolix"
+        target="_blank" aria-label="GitHub" title="Ir a GitHub de @rafaolix">
+        <svg width="28" height="28">
+          <use xlink:href="./assets/sprite.svg#github" />
+        </svg>
+      </a>
+
+      <!-- Instagram -->
+      <a class="social-button animate-slide-up-fade animate-delay-200 bg-gradient-to-tr from-yellow-300 via-pink-600 to-purple-600"
+        href="https://instagram.com/rafaelolivares0" target="_blank" aria-label="Instagram" title="Ir a Instagram de @rafaelolivares0">
+        <svg width="28" height="28">
+          <use xlink:href="./assets/sprite.svg#instagram" />
+        </svg>
+      </a>
+
+      <!-- YouTube -->
+      <a class="bg-white social-button animate-slide-up-fade animate-delay-300" href="https://youtube.com/@rafaelolivares3635?si=eKbdrxSXihVmi60Y"
+        target="_blank" aria-label="YouTube" title="Ir a YouTube de @rafaolix">
+        <svg width="28" height="28">
+          <use xlink:href="./assets/sprite.svg#youtube" />
+        </svg>
+      </a>
+
+
+      <!-- LinkedIn -->
+      <a class="bg-white social-button animate-slide-up-fade animate-delay-500" href="https://www.linkedin.com/in/rafael-andr%C3%A9s-olivares-criollo-0a142b30b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        target="_blank" aria-label="LinkedIn" title="Ir a LinkedIn de @rafaolix">
+        <svg width="28" height="28">
+          <use xlink:href="./assets/sprite.svg#linkedin" />
+        </svg>
+      </a>
+    </section>
+
+    <p class="text-midu-lol text-center mt-4 text-sm px-4 text-balance max-w-xl mx-auto">
+      Un apasionado de la programación y el desarrollo web. Aquí encontrarás enlaces a mis certificaciones, proyectos y redes sociales. ¡Espero que disfrutes del contenido!
+    </p>
+  </header>
+
+<main class="pt-4 px-4 pb-16 p-96 ">
+ 
+  <!-- Contenido dinámico del bento -->
+  <div id="bento-content" class="mt-8"></div>
+</<!-- filepath: c:\Users\RafaelOlivares\Downloads\rafael-portafolio-mayo-2025\index.html -->
+<main class="pt-4 px-4 pb-16 ">
+  <div id="bento-buttons" class="grid grid-cols-3 gap-4 max-w-xl mx-auto text-white">
+
+
+    
+    <span class="font-bold text-2xl group col-span-3 items-center justify-center mb-2">Logros</span>
+
+    <!-- Certificaciones -->
+     
+    <a
+      id="btn-certificaciones"
+      class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-700 to-emerald-400 border border-emerald-900 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group p-7 min-h-[120px] col-span-3 text-left animate-fade-in cursor-pointer"
+      onclick="mostrarBento('certificaciones')"
+    >
+      <span class="font-bold text-2xl mb-2">Certificaciones</span>
+      <span class="text-xs border rounded-xl px-2 py-1 bg-black/20">Ver mis certificados y logros</span>
+      <img src="assets/iconos/certificacion.png" class="absolute right-4 bottom-4 size-16 opacity-30" width="48" height="48">
+
+      </a>
+    <!-- Proyectos -->
+    <a
+    id="btn-proyectos"
+    class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-sky-900 via-sky-700 to-sky-400 border border-sky-900 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group p-7 min-h-[120px] col-span-3 text-left animate-fade-in cursor-pointer"
+      onclick="mostrarBento('proyectos')"
+    >
+      <span class="font-bold text-2xl mb-2">Proyectos</span>
+      <span class="text-xs border rounded-xl px-2 py-1 bg-black/20">Explora mis proyectos destacados</span>
+      <img src="assets/iconos/programa-de-fidelidad.png" class="absolute right-4 bottom-4 size-16 opacity-30" width="48" height="48">
+  </img>
+</a>
+    
+
+
+    <span class="font-bold text-2xl mb-2 col-span-3">Tecnologias</span>
+
+
+
+<buttom class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#38bdf8] via-[#06b6d4] to-white border border-[#38bdf8] flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-1 p-7 min-h-[180px]">
+  <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 transition-transform">Tailwind</span>
+  
+  
+  <div class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform">
+<img src="/assets/logos/Tailwind_CSS.png" ">
+</div>
+
+  <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">CSS Framework</span>
+</buttom>
+
+
+<button class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-yellow-400 via-yellow-300 to-white border border-yellow-400 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-2 p-7 min-h-[180px]">
+  <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 transition-transform">
+    JavaScript
+  </span>
+
+  <div class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform">
+<img src="/assets/logos/javascript-logo.webp" >
+</div>
+
+
+  <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">Lenguaje de programación</span>
+</button>
+
+
+<buttom class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#306998] via-[#4B8BBE] to-white border border-[#306998] flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-2 p-7 min-h-[180px]">
+  <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 transition-transform">Python</span>
+  
+
+  
+  <div class="absolute -right-17 -bottom-26 -rotate-6 size-60 group-hover:-rotate-12 group-hover:scale-125 transition-transform">
+<img src="/assets/logos/python.png" ">
+</div>
+  <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">Lenguaje de programación</span>
+</buttom>
+
+<buttom class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#38bdf8] via-[#06b6d4] to-white border border-[#38bdf8] flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-1 p-7 min-h-[180px]">
+  <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 transition-transform">CSS</span>
+  <svg class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform" width="100" height="100">
+    <use xlink:href="./assets/sprite.svg#css" />
+  </svg>
+  <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">CSS Framework</span>
+</buttom>
+
+
+<buttom class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#38bdf8] via-[#06b6d4] to-white border border-[#38bdf8] flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-1 p-7 min-h-[180px]">
+  <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 transition-transform">HTML</span>
+  <svg class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform" width="100" height="100">
+    <use xlink:href="./assets/sprite.svg#html" />
+  </svg>
+  <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">Lenguaje</span>
+</buttom>
+
+<buttom class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#f1502f] via-[#f1502f] to-white border border-[#f1502f] flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-2 p-7 min-h-[180px]">
+  <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 transition-transform">Git</span>
+  
+  <div class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform">
+<img src="/assets/logos/git.png" >
+</div>
+  <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">Control de versiones</span>
+</buttom>
+
+<buttom class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#181717] via-[#333] to-white border border-[#181717] flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-2 p-7 min-h-[180px]">
+  <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 transition-transform">GitHub</span>
+  <svg class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform" width="100" height="100">
+    <use xlink:href="./assets/sprite.svg#github" />
+  </svg>
+  <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">Repositorios</span>
+</buttom>
+
+<buttom class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#00758F] via-[#00ADEF] to-white border border-[#00758F] flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-1 p-7 min-h-[180px]">
+  <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 transition-transform">SQL</span>
+  
+  <div class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform">
+<img src="/assets/logos/mysql.png" >
+</div>
+  <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">Bases de datos</span>
+</buttom>
+
+<buttom class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#4F5D95] via-[#8993be] to-white border border-[#4F5D95] flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-2 p-7 min-h-[180px]">
+  <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 col-span-2 transition-transform">PHP</span>
+  
+  
+  <div class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform">
+<img src="/assets/logos/php.png" >
+</div>
+  <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">Lenguaje backend</span>
+</buttom>
+
+
+
+  </div>
+
+</main>
+
+<script>
+function mostrarBento(tipo) {
+  document.getElementById('bento-buttons').style.display = 'none';
+  const content = document.getElementById('bento-content');
+  let html = `
+    <div class="flex justify-center mb-8">
+      <button onclick="volverBento()" class="flex items-center gap-2 px-6 py-2 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition font-semibold shadow animate-slide-down">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        Volver
+      </button>
+    </div>
+  `;
+  if (tipo === 'certificaciones') {
+    html += `
+      <div class="rounded-3xl bg-emerald-950/80 p-8 text-white shadow-2xl animate-fade-in max-w-xl mx-auto">
+        <h2 class="text-2xl font-bold mb-6">Certificaciones</h2>
+        <ul class="space-y-6">
+
+
+          <li class="flex items-center justify-between gap-4 bg-emerald-900/60 rounded-2xl p-4">
+            <div>
+              <div class="font-semibold">Curso de CSS</div>
+              <div class="text-xs opacity-80">Codigofacilito</div>
+            </div>
+            <a href="assets/certificados/Certificado - Curso de CSS.pdf" target="_blank"
+              class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 transition text-white font-bold text-sm shadow">
+              Ver PDF
+            </a>
+          </li>
+
+
+
+          
+
+
+
+
+          <li class="flex items-center justify-between gap-4 bg-emerald-900/60 rounded-2xl p-4">
+            <div>
+              <div class="font-semibold">Curso de Visual Studio Code y GitHub Copilot</div>
+              <div class="text-xs opacity-80">Codigofacilito</div>
+            </div>
+            <a href="assets/certificados/Certificado - Curso de Visual Studio Code y GitHub Copilot.pdf" target="_blank"
+              class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 transition text-white font-bold text-sm shadow">
+              Ver PDF
+            </a>
+          </li>
+
+
+          <li class="flex items-center justify-between gap-4 bg-emerald-900/60 rounded-2xl p-4">
+            <div>
+              <div class="font-semibold">Curso profesional de Python</div>
+              <div class="text-xs opacity-80">Codigofacilito</div>
+            </div>
+            <a href="assets/certificados/Certificado - Curso profesional de Python.pdf" target="_blank"
+              class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 transition text-white font-bold text-sm shadow">
+              Ver PDF
+            </a>
+          </li>
+
+          
+          <li class="flex items-center justify-between gap-4 bg-emerald-900/60 rounded-2xl p-4">
+            <div>
+              <div class="font-semibold">Introducción a Bash Scripting - Bootcamp DevOps</div>
+              <div class="text-xs opacity-80">Codigofacilito</div>
+            </div>
+            <a href="assets/certificados/Certificado - Introducción a Bash Scripting - Bootcamp DevOps.pdf" target="_blank"
+              class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 transition text-white font-bold text-sm shadow">
+              Ver PDF
+            </a>
+          </li>
+          
+          
+          <li class="flex items-center justify-between gap-4 bg-emerald-900/60 rounded-2xl p-4">
+            <div>
+              <div class="font-semibold">LIVECLASS GitHub Copilot</div>
+              <div class="text-xs opacity-80">Codigofacilito</div>
+            </div>
+            <a href="assets/certificados/Certificado - LIVECLASS_ GitHub Copilot.pdf" target="_blank"
+              class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 transition text-white font-bold text-sm shadow">
+              Ver PDF
+            </a>
+          </li>
+          
+
+          <li class="flex items-center justify-between gap-4 bg-emerald-900/60 rounded-2xl p-4">
+            <div>
+              <div class="font-semibold">Computer Vision Tensorflow</div>
+              <div class="text-xs opacity-80">Platzi</div>
+            </div>
+            <a href="assets/certificados/certificado-computer-vision-tensorflow.pdf" target="_blank"
+              class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 transition text-white font-bold text-sm shadow">
+              Ver PDF
+            </a>
+          </li>
+          
+
+          <li class="flex items-center justify-between gap-4 bg-emerald-900/60 rounded-2xl p-4">
+            <div>
+              <div class="font-semibold">Notion</div>
+              <div class="text-xs opacity-80">Platzi</div>
+            </div>
+            <a href="assets/certificados/certificado-notion.pdf" target="_blank"
+              class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 transition text-white font-bold text-sm shadow">
+              Ver PDF
+            </a>
+          </li>
+          
+
+          <li class="flex items-center justify-between gap-4 bg-emerald-900/60 rounded-2xl p-4">
+            <div>
+              <div class="font-semibold">Scrum Master</div>
+              <div class="text-xs opacity-80">Platzi</div>
+            </div>
+            <a href="assets/certificados/certificado-scrum-master.pdf" target="_blank"
+              class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 transition text-white font-bold text-sm shadow">
+              Ver PDF
+            </a>
+          </li>
+          
+          
+        </ul>
+      </div>
+    `;
+  } else if (tipo === 'proyectos') {
+    html += `
+      <div class=" max-w-2xl items-center mx-auto rounded-3xl bg-sky-950/80 p-8 text-white shadow-2xl animate-fade-in">
+        <h2 class="text-2xl font-bold mb-6">Proyectos</h2>
+        <div class="flex flex-col items-center gap-8">
+  <div class="w-full max-w-4xl mx-auto bg-sky-900/60 rounded-2xl p-6 flex flex-col items-center shadow-lg animate-slide-up mb-8">
+  <div class="w-full flex flex-col items-center">
+    <img id="img-arduino" src="assets/proyectos/arduino1.jpg" alt="Arduino" class="w-full max-w-2xl h-72 object-cover rounded-xl shadow-lg mb-4 transition-all duration-300">
+    <div class="flex gap-4 mb-2">
+      <button onclick="cambiarFoto('arduino', -1)" class="px-4 py-2 bg-sky-800 rounded-full hover:bg-sky-700 transition">Anterior</button>
+      <button onclick="cambiarFoto('arduino', 1)" class="px-4 py-2 bg-sky-800 rounded-full hover:bg-sky-700 transition">Siguiente</button>
+    </div>
+  </div>
+  <div class="w-full text-center">
+    <div class="font-semibold text-xl mb-2">Proyecto Arduino</div>
+    <div class="text-sm opacity-80 mb-2">Descripción del proyecto Arduino.</div>
+  </div>
+</div>
+  
+  
+        <div class="w-full max-w-4xl mx-auto bg-sky-900/60 rounded-2xl p-6 flex flex-col items-center shadow-lg animate-slide-up mb-8">
+  <div class="w-full flex flex-col items-center">
+    <img id="img-chacao" src="assets/proyectos/chacao1.jpg" alt="Chacao" class="w-full max-w-2xl h-72 object-cover rounded-xl shadow-lg mb-4 transition-all duration-300">
+    <div class="flex gap-4 mb-2">
+      <button onclick="cambiarFoto('chacao', -2)" class="px-4 py-2 bg-sky-800 rounded-full hover:bg-sky-700 transition">Anterior</button>
+      <button onclick="cambiarFoto('chacao', 2)" class="px-4 py-2 bg-sky-800 rounded-full hover:bg-sky-700 transition">Siguiente</button>
+    </div>
+  </div>
+  <div class="w-full text-center">
+    <div class="font-semibold text-xl mb-2">Proyecto Arduino</div>
+    <div class="text-sm opacity-80 mb-2">Descripción del proyecto Arduino.</div>
+  </div>
+</div>
+  <!-- Agrega más proyectos aquí si lo deseas -->
+</div>
+      </div>
+    `;
+  }
+  content.innerHTML = html;
+}
+
+function volverBento() {
+  document.getElementById('bento-buttons').style.display = '';
+  document.getElementById('bento-content').innerHTML = '';
+}
+</script>
+
+
+<script>
+const fotosProyectos = {
+  arduino: [
+    "assets/proyectos/arduino1.jpg",
+    "assets/proyectos/arduino2.jpg",
+    "assets/proyectos/arduino3.jpg"
+    // Agrega más si tienes
+  ],
+  chacao: [
+    "assets/proyectos/chacao1.jpg",
+    "assets/proyectos/chacao2.jpg",
+    "assets/proyectos/chacao3.jpg"
+
+    // Agrega más si tienes
+  ],
+  // Puedes agregar más proyectos aquí
+};
+
+const indicesFotos = {
+  arduino: 0,
+  chacao: 0
+  // Inicializa para cada proyecto
+};
+
+function cambiarFoto(proyecto, cambio) {
+  const total = fotosProyectos[proyecto].length;
+  indicesFotos[proyecto] = (indicesFotos[proyecto] + cambio + total) % total;
+  document.getElementById('img-' + proyecto).src = fotosProyectos[proyecto][indicesFotos[proyecto]];
+}
+</script>
+</body>
+
+</html>
