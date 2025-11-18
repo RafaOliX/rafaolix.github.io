@@ -353,6 +353,45 @@ function mostrarBento(tipo) {
       `;
     } else if (tipo === 'proyectos') {
       html += `
+
+
+      <div class=" max-w-2xl items-center mx-auto rounded-3xl bg-sky-950/80 p-8 text-white shadow-2xl animate-fade-in">
+        <h2 class="text-2xl font-bold mb-6">Proyectos</h2>
+        <div class="flex flex-col items-center gap-8">
+          
+            <div class="w-full max-w-4xl mx-auto bg-sky-900/60 rounded-2xl p-6 flex flex-col items-center shadow-lg animate-slide-up mb-8">
+            <div class="w-full flex flex-col items-center">
+              <img id="img-tesis" src="/assets/proyectos/hospital1.jpg" alt="Trabajo de Grado" class="w-full max-w-2xl h-72 object-cover rounded-xl shadow-lg mb-4 transition-all duration-300">
+              <div class="flex gap-4 mb-2">
+                <button onclick="cambiarFoto('', -1)" class="px-4 py-2 bg-sky-800 rounded-full hover:bg-sky-700 transition">Anterior</button>
+                <button onclick="cambiarFoto('tesis', 1)" class="px-4 py-2 bg-sky-800 rounded-full hover:bg-sky-700 transition">Siguiente</button>
+              </div>
+            </div>
+            <div class="w-full text-center">
+              <div class="font-semibold text-xl mb-2">Sistema Automatizado Hospitalario</div>
+              <div class="text-sm opacity-80 mb-2">Proyecto de sobre la Automatización y Administración de Quirofanos </div>
+            </div>
+          </div>
+
+
+      <div class=" max-w-2xl items-center mx-auto rounded-3xl bg-sky-950/80 p-8 text-white shadow-2xl animate-fade-in">
+        <h2 class="text-2xl font-bold mb-6">Proyectos</h2>
+        <div class="flex flex-col items-center gap-8">
+          
+            <div class="w-full max-w-4xl mx-auto bg-sky-900/60 rounded-2xl p-6 flex flex-col items-center shadow-lg animate-slide-up mb-8">
+            <div class="w-full flex flex-col items-center">
+              <img id="img-tesis" src="/assets/proyectos/payguard1.jpg" alt="Trabajo de Grado" class="w-full max-w-2xl h-72 object-cover rounded-xl shadow-lg mb-4 transition-all duration-300">
+              <div class="flex gap-4 mb-2">
+                <button onclick="cambiarFoto('payguard', -1)" class="px-4 py-2 bg-sky-800 rounded-full hover:bg-sky-700 transition">Anterior</button>
+                <button onclick="cambiarFoto('payguard', 1)" class="px-4 py-2 bg-sky-800 rounded-full hover:bg-sky-700 transition">Siguiente</button>
+              </div>
+            </div>
+            <div class="w-full text-center">
+              <div class="font-semibold text-xl mb-2">PAYGUARD</div>
+              <div class="text-sm opacity-80 mb-2">Proyecto de sobre la Detección con Visión Artificial para una App de Cobros</div>
+            </div>
+          </div>
+
       <div class=" max-w-2xl items-center mx-auto rounded-3xl bg-sky-950/80 p-8 text-white shadow-2xl animate-fade-in">
         <h2 class="text-2xl font-bold mb-6">Proyectos</h2>
         <div class="flex flex-col items-center gap-8">
