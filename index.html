@@ -13,7 +13,7 @@
 
 <body class="
   min-h-dvh
-  bg-gradient-to-b from-black via-violet-950 to-sky-900 animate-fade-in
+bg-gradient-to-b from-zinc-200 via-indigo-400 to-indigo-700
 ">
   <header class="text-white ">
     <img alt="olivares sonriendo" src="./assets/olivares1.jpg"
@@ -38,7 +38,7 @@
         </svg>
       </span>
 
-      <h1 class="text-3xl font-extrabold leading-tight mt-1 font-display">
+      <h1 class="text-3xl font-extrabold leading-tight mt-1 font-display text-gray-500 ">
         Rafael Andrés Olivares Criollo
       </h1>
       
@@ -83,7 +83,7 @@
       </a>
     </section>
 
-    <p class="text-midu-lol text-center mt-4 text-sm px-4 text-balance max-w-xl mx-auto">
+    <p class="text-midu-lol text-center font-extrabold mt-4 text-2xl px-4 text-balance max-w-xl mx-auto">
       Un apasionado de la programación y el desarrollo web. Aquí encontrarás enlaces a mis certificaciones, proyectos y redes sociales. ¡Espero que disfrutes del contenido!
     </p>
   </header>
@@ -375,9 +375,19 @@ function mostrarBento(tipo) {
         <h2 class="text-2xl font-bold mb-6">Proyectos</h2>
         <div class="flex flex-col items-center gap-8">
           
+
+
+
+
+
+                
+
+
+
+          
             <div class="w-full max-w-4xl mx-auto bg-sky-900/60 rounded-2xl p-6 flex flex-col items-center shadow-lg animate-slide-up mb-8">
             <div class="w-full flex flex-col items-center">
-              <img id="img-tesis" src="/assets/proyectos/hospital1.jpg" alt="Trabajo de Grado" class="w-full max-w-2xl h-72 object-cover rounded-xl shadow-lg mb-4 transition-all duration-300">
+              <img id="img-hospital" src="/assets/proyectos/hospital1.jpg" alt="Hospital" class="w-full max-w-2xl h-72 object-cover rounded-xl shadow-lg mb-4 transition-all duration-300">
               <div class="flex gap-4 mb-2">
                 <button onclick="cambiarFoto('hospital', -1)" class="px-4 py-2 bg-sky-800 rounded-full hover:bg-sky-700 transition">Anterior</button>
                 <button onclick="cambiarFoto('hospital', 1)" class="px-4 py-2 bg-sky-800 rounded-full hover:bg-sky-700 transition">Siguiente</button>
@@ -390,24 +400,23 @@ function mostrarBento(tipo) {
           </div>
 
           
-            <div class="w-full max-w-4xl mx-auto bg-sky-900/60 rounded-2xl p-6 flex flex-col items-center shadow-lg animate-slide-up mb-8">
+
+
+          <div class="w-full max-w-4xl mx-auto bg-sky-900/60 rounded-2xl p-6 flex flex-col items-center shadow-lg animate-slide-up mb-8">
             <div class="w-full flex flex-col items-center">
-              <img id="img-tesis" src="/assets/proyectos/payguard1.jpg" alt="Trabajo de Grado" class="w-full max-w-2xl h-72 object-cover rounded-xl shadow-lg mb-4 transition-all duration-300">
+              <img id="img-payguard" src="/assets/proyectos/payguard1.jpg" alt="payguard" class="w-full max-w-2xl h-72 object-cover rounded-xl shadow-lg mb-4 transition-all duration-300">
               <div class="flex gap-4 mb-2">
                 <button onclick="cambiarFoto('payguard', -1)" class="px-4 py-2 bg-sky-800 rounded-full hover:bg-sky-700 transition">Anterior</button>
                 <button onclick="cambiarFoto('payguard', 1)" class="px-4 py-2 bg-sky-800 rounded-full hover:bg-sky-700 transition">Siguiente</button>
               </div>
             </div>
             <div class="w-full text-center">
-              <div class="font-semibold text-xl mb-2">PAYGUARD</div>
-              <div class="text-sm opacity-80 mb-2">Proyecto de sobre la Detección con Visión Artificial para una App de Cobros</div>
+              <div class="font-semibold text-xl mb-2">Sistema de Cobros Facial</div>
+              <div class="text-sm opacity-80 mb-2">Proyecto de Cobros con Vision Artificial </div>
             </div>
           </div>
 
-      <div class=" max-w-2xl items-center mx-auto rounded-3xl bg-sky-950/80 p-8 text-white shadow-2xl animate-fade-in">
-        <h2 class="text-2xl font-bold mb-6">Proyectos</h2>
-        <div class="flex flex-col items-center gap-8">
-          
+
             <div class="w-full max-w-4xl mx-auto bg-sky-900/60 rounded-2xl p-6 flex flex-col items-center shadow-lg animate-slide-up mb-8">
             <div class="w-full flex flex-col items-center">
               <img id="img-tesis" src="/assets/proyectos/tesis1.jpg" alt="Trabajo de Grado" class="w-full max-w-2xl h-72 object-cover rounded-xl shadow-lg mb-4 transition-all duration-300">
@@ -476,7 +485,7 @@ function mostrarBento(tipo) {
 
   <div class="w-full max-w-4xl mx-auto bg-sky-900/60 rounded-2xl p-6 flex flex-col items-center shadow-lg animate-slide-up mb-8">
   <div class="w-full flex flex-col items-center">
-    <img id="img-sice" src="assets/proyectos/sice1.jpg" alt="Chacao" class="w-full max-w-2xl h-72 object-cover rounded-xl shadow-lg mb-4 transition-all duration-300">
+    <img id="img-sice" src="assets/proyectos/sice1.jpg" alt="Sice" class="w-full max-w-2xl h-72 object-cover rounded-xl shadow-lg mb-4 transition-all duration-300">
     <div class="flex gap-4 mb-2">
       <button onclick="cambiarFoto('sice', -1)" class="px-4 py-2 bg-sky-800 rounded-full hover:bg-sky-700 transition">Anterior</button>
       <button onclick="cambiarFoto('sice', 1)" class="px-4 py-2 bg-sky-800 rounded-full hover:bg-sky-700 transition">Siguiente</button>
@@ -506,11 +515,21 @@ function volverBento() {
 
 <script>
 const fotosProyectos = {
+  hospital: [
+    "assets/proyectos/hospital.jpg",
+    "assets/proyectos/hospital2.jpg",
+    "assets/proyectos/hospital3.jpg"
+    // Agrega más si tienes
+  ],
+  payguard: [
+    "assets/proyectos/payguardl.jpg",
+    "assets/proyectos/payguard2.jpg",
+    "assets/proyectos/payguard3.jpg"
+  ],
   arduino: [
     "assets/proyectos/arduino1.jpg",
     "assets/proyectos/arduino2.jpg",
     "assets/proyectos/arduino3.jpg"
-    // Agrega más si tienes
   ],
   chacao: [
     "assets/proyectos/chacao1.jpg",
@@ -544,7 +563,9 @@ const indicesFotos = {
   chacao: 0,
   crecimiento: 0,
   tesis: 0,
-  sice: 0
+  sice: 0,
+  hospital: 0,
+  payguard: 0
   // Inicializa para cada proyecto
 };
 
