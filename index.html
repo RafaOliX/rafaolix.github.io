@@ -18,9 +18,39 @@
 
     gtag('config', 'G-RM8RE26D8H');
   </script>
+  <style>
+    /* background particles layer behind everything */
+    #tsparticles-bg{ position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.9; filter: drop-shadow(0 6px 24px rgba(0,170,255,0.06)); }
+    /* ensure main content sits above particles */
+    body > *:not(#tsparticles-bg){ position:relative; z-index:10; }
+  </style>
 </head>
 
 <body class="min-h-dvh bg-gradient-to-b from-[#05339C] via-[#1055C9] to-[#41A67E]">
+  <div id="tsparticles-bg"></div>
+
+  <!-- tsParticles (CDN) + init -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script>
+    tsParticles.load("tsparticles-bg", {
+      fullScreen: { enable: false },
+      particles: {
+        number: { value: 40, density: { enable: true, area: 800 } },
+        color: { value: ["#00f0ff","#ff2db6","#00aaff"] },
+        shape: { type: "circle" },
+        opacity: { value: 0.7 },
+        size: { value: { min: 1.5, max: 4 } },
+        move: { enable: true, speed: 1.2, direction: "none", outModes: "bounce" },
+        links: { enable: true, distance: 120, color: "#00aaff", opacity: 0.12, width: 1 }
+      },
+      interactivity: {
+        events: { onHover: { enable: true, mode: "grab" }, onClick: { enable: true, mode: "repulse" } },
+        modes: { grab: { distance: 140, links: { opacity: 0.18 } }, repulse: { distance: 120 } }
+      },
+      retina_detect: true
+    });
+  </script>
+
   <header class="text-white ">
     <img alt="olivares sonriendo" src="./assets/olivares1.jpg"
       class="h-full w-full object-cover object-top rounded-4xl m-10 shadow-lg mx-auto animate-pulse-fade-in max-w-xl mx-auto"
