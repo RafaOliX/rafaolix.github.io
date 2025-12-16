@@ -20,9 +20,20 @@
   </script>
   <style>
     /* background particles layer behind everything */
-    #tsparticles-bg{ position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.9; filter: drop-shadow(0 6px 24px rgba(0,170,255,0.06)); }
+    #tsparticles-bg{ position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.9; filter: drop-shadow(0 60px 54px rgba(0,170,255,0.06)); }
     /* ensure main content sits above particles */
     body > *:not(#tsparticles-bg){ position:relative; z-index:10; }
+    /* subtle scroll-into-view animation helpers (lighter and more performant) */
+    .scroll-animate{ opacity:0; transform:translateY(8px); transition:opacity .45s ease, transform .45s ease; will-change: transform, opacity; }
+    .scroll-animate.visible{ opacity:1; transform:none; will-change: auto; }
+
+    /* smoother, more subtle hover for grouped buttons */
+    .group{ transition: transform .28s ease, filter .28s ease; transform-origin: center; }
+    .group:hover{ transform: scale(1.03); }
+
+    /* social buttons slight lift */
+    .social-button{ transition: transform .28s ease, box-shadow .28s ease; }
+    .social-button:hover{ transform: translateY(-3px) scale(1.02); }
   </style>
 </head>
 
@@ -97,8 +108,8 @@
 
       <!-- Instagram -->
       <a class="social-button animate-slide-up-fade animate-delay-200 bg-gradient-to-tr from-yellow-300 via-pink-600 to-purple-600"
-        href="https://instagram.com/rafaelolivares0" target="_blank" aria-label="Instagram"
-        title="Ir a Instagram de @rafaelolivares0">
+        href="https://instagram.com/rafaelolivares____" target="_blank" aria-label="Instagram"
+        title="Ir a Instagram de @rafaelolivares____">
         <svg width="28" height="28">
           <use xlink:href="./assets/sprite.svg#instagram" />
         </svg>
@@ -154,7 +165,7 @@
         <!-- Certificaciones -->
 
         <a id="btn-certificaciones"
-          class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-700 to-emerald-400 border border-emerald-900 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group p-7 min-h-[120px] col-span-3 text-left animate-fade-in cursor-pointer"
+          class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-700 to-emerald-400 border border-emerald-900 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group p-7 min-h-[120px] col-span-3 text-left animate-fade-in cursor-pointer scroll-animate"
           onclick="mostrarBento('certificaciones')">
           <span class="font-bold text-2xl mb-2">Certificaciones</span>
           <span class="text-xs border rounded-xl px-2 py-1 bg-black/20">Ver mis certificados y logros</span>
@@ -162,9 +173,17 @@
             height="48">
 
         </a>
+        <!-- Experiencias -->
+        <a id="btn-experiencias"
+          class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-purple-900 via-purple-700 to-pink-500 border border-purple-900 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group p-7 min-h-[120px] col-span-3 text-left animate-fade-in cursor-pointer scroll-animate"
+          onclick="mostrarBento('experiencias')">
+          <span class="font-bold text-2xl mb-2">Experiencias</span>
+          <span class="text-xs border rounded-xl px-2 py-1 bg-black/20">Mi experiencia laboral y voluntariados</span>
+          <img src="assets/iconos/experiencia.png" class="absolute right-4 bottom-4 size-16 opacity-30" width="48" height="48">
+        </a>
         <!-- Proyectos -->
         <a id="btn-proyectos"
-          class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-sky-900 via-sky-700 to-sky-400 border border-sky-900 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group p-7 min-h-[120px] col-span-3 text-left animate-fade-in cursor-pointer "
+          class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-sky-900 via-sky-700 to-sky-400 border border-sky-900 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group p-7 min-h-[120px] col-span-3 text-left animate-fade-in cursor-pointer scroll-animate"
           onclick="mostrarBento('proyectos')">
           <span class="font-bold text-2xl mb-2">Proyectos</span>
           <span class="text-xs border rounded-xl px-2 py-1 bg-black/20">Explora mis proyectos destacados</span>
@@ -305,9 +324,101 @@ hover:scale-105 hover:contrast-125 flex flex-col items-start transition group co
 
 
         <button
-          class="relative rounded-3xl overflow-hidden bg-gradient-to-br via-80% from-black via-yellow-500 to-orange-200 border border-gray-800 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-3 md:col-span-2 p-7 min-h-[180px] md:col-span-1">
+          class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-700 via-emerald-500 to-emerald-300 border border-emerald-600 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-3 md:col-span-2 p-7 min-h-[180px] md:col-span-1">
           <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 transition-transform">
-            LINUX
+            Excel
+          </span>
+
+          <div
+            class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform">
+            <img src="/assets/logos/excel.png">
+          </div>
+
+
+          <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">Macros Avanzadas</span>
+        </button>
+
+        <button
+          class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-yellow-400 via-yellow-300 to-amber-200 border border-yellow-400 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-3 md:col-span-2 p-7 min-h-[180px] md:col-span-1">
+          <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 transition-transform">
+            PowerBI
+          </span>
+
+          <div
+            class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform">
+            <img src="/assets/logos/powerbi.png">
+          </div>
+
+
+          <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">Presentación de Reportes</span>
+        </button>
+
+        <button
+          class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-orange-500 via-orange-300 to-white border border-orange-400 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-3 md:col-span-1 p-7 min-h-[180px] md:col-span-1">
+          <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 transition-transform">
+            Blender
+          </span>
+
+          <div
+            class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform">
+            <img src="/assets/logos/blender.png">
+          </div>
+
+
+          <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">Diseño de Renders</span>
+        </button>
+
+        <button
+          class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-900 via-indigo-600 to-indigo-300 border border-indigo-800 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-3 md:col-span-1 p-7 min-h-[180px] md:col-span-1">
+          <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 transition-transform">
+            Photoshop
+          </span>
+
+          <div
+            class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform">
+            <img src="/assets/logos/photoshop.png">
+          </div>
+
+
+          <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">Edicion de Fotografia</span>
+        </button>
+
+        <button
+          class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-orange-600 via-orange-400 to-orange-200 border border-orange-600 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-3 md:col-span-2 p-7 min-h-[180px] md:col-span-1">
+          <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 transition-transform">
+            Illustrator
+          </span>
+
+          <div
+            class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform">
+            <img src="/assets/logos/illustrator.png">
+          </div>
+
+
+          <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">Vectorizacion Ilustreitor</span>
+        </button>
+
+        <button
+          class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-violet-700 via-violet-500 to-violet-300 border border-violet-600 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-3 md:col-span-2 p-7 min-h-[180px] md:col-span-1">
+          <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 transition-transform">
+            Visual Basic
+          </span>
+
+          <div
+            class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform">
+            <img src="/assets/logos/visual-basic.png">
+          </div>
+
+
+          <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">Lenguaje de Programacion</span>
+        </button>
+
+
+        
+        <button
+          class="relative rounded-3xl overflow-hidden bg-gradient-to-br via-80% from-black via-yellow-500 to-orange-200 border border-gray-800 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group col-span-3 md:col-span-1 p-7 min-h-[180px] md:col-span-1">
+          <span class="absolute bottom-2 left-4 font-bold text-2xl group-hover:-translate-y-1 transition-transform">
+            Linux
           </span>
 
           <div
@@ -318,7 +429,6 @@ hover:scale-105 hover:contrast-125 flex flex-col items-start transition group co
 
           <span class="absolute top-2 left-4 text-xs border rounded-xl px-1 py-0.5">Sistemas Operativos Unix</span>
         </button>
-
       </div>
 
     </main>
@@ -445,6 +555,51 @@ hover:scale-105 hover:contrast-125 flex flex-col items-start transition group co
           
           
         </ul>
+      </div>
+      `;
+        } else if (tipo === 'experiencias') {
+          html += `
+      <div class="max-w-6xl w-full mx-auto rounded-3xl bg-purple-950/80 p-8 text-white shadow-2xl animate-fade-in">
+        <h2 class="text-2xl font-bold mb-6">Experiencias</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="col-span-1 md:col-span-3">
+            <div class="w-full bg-purple-900/60 rounded-2xl p-6 flex flex-col md:flex-row items-start gap-6 scroll-animate">
+              <div class="flex-shrink-0">
+                <img src="/assets/logos/balgres.png" alt="Balgres logo" class="w-28 h-28 object-contain rounded-md bg-white/25 p-2">
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="font-semibold text-xl">Empresa Balgres C.A. – Desarrollador de IT</div>
+                    <div class="text-xs opacity-80">sep de 2024 – Actualmente</div>
+                  </div>
+                </div>
+
+                <ul class="mt-4 list-disc ml-5 space-y-2 text-sm">
+                  <li>Diseño y desarrollo web con enfoque en UI/UX moderno, responsivo y funcional — <a href="https://balgres.com" target="_blank" class="text-sky-300 underline">balgres.com</a></li>
+                  <li>Configuración de entornos virtuales con Hyper-V y despliegue técnico de módulos en Odoo ERP</li>
+                  <li>Automatización de procesos administrativos con macros en Office y análisis de datos con Power BI</li>
+                  <li>Creación de renders 3D y edición de contenido audiovisual institucional</li>
+                  <li>Implementación de sistemas de cámaras de seguridad e integración con red IP</li>
+                  <li>Administración de troncales telefónicas y racks de redes estructuradas</li>
+                  <li>Manejo de terminales Unix/Linux para administración, scripting y troubleshooting</li>
+                  <li>Instalación y manejo de cableado UTP y soluciones a problemas de conectividad física</li>
+                  <li>Desarrollo de aplicaciones móviles con Dart y Flutter (Catálogo de Productos de Cerámicas)</li>
+                  <li>Implementación de Active Directory: usuarios, grupos y políticas de GPO</li>
+                  <li>Instalación y configuración de OS (Windows, Linux), software y VPNs para acceso seguro</li>
+                  <li>Diagnóstico y reparación de hardware (PCs, impresoras, dispositivos de red)</li>
+                </ul>
+
+                <div class="mt-6 grid grid-cols-2 gap-3">
+                  <img src="/assets/proyectos/balgres2.jpeg" alt="balgres 2" class="w-full h-fit object-cover rounded-md">
+                  <img src="/assets/proyectos/balgres3.jpg" alt="balgres 3" class="w-full h-fit object-cover rounded-md">
+                  <img src="/assets/proyectos/balgres4.jpg" alt="balgres 4" class="w-full h-full object-cover rounded-md">
+                  <img src="/assets/proyectos/balgres1.jpeg" alt="balgres 1" class="w-full h-fit object-cover rounded-md">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       `;
         } else if (tipo === 'proyectos') {
@@ -599,11 +754,13 @@ hover:scale-105 hover:contrast-125 flex flex-col items-start transition group co
     `;
         }
         content.innerHTML = html;
+        if (typeof initScrollAnimations === 'function') initScrollAnimations(document.getElementById('bento-content'));
       }
 
       function volverBento() {
         document.getElementById('bento-buttons').style.display = '';
         document.getElementById('bento-content').innerHTML = '';
+        if (typeof initScrollAnimations === 'function') initScrollAnimations(document.getElementById('bento-buttons'));
       }
     </script>
 
@@ -727,6 +884,27 @@ hover:scale-105 hover:contrast-125 flex flex-col items-start transition group co
       }
 
 
+    </script>
+    <script>
+      // Reusable IntersectionObserver to avoid creating many observers
+      function initScrollAnimations(root) {
+        const container = root instanceof Element ? root : document;
+        const els = container.querySelectorAll ? container.querySelectorAll('.scroll-animate') : document.querySelectorAll('.scroll-animate');
+        if (!els || els.length === 0) return;
+        if (!window.__scrollObserver) {
+          window.__scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                try { window.__scrollObserver.unobserve(entry.target); } catch (e) {}
+              }
+            });
+          }, { threshold: 0.14 });
+        }
+        els.forEach(el => window.__scrollObserver.observe(el));
+      }
+
+      document.addEventListener('DOMContentLoaded', () => initScrollAnimations(document.getElementById('bento-buttons')));
     </script>
 </body>
 
