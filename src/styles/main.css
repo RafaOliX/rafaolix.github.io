@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import "./glitch.css";
+
+@theme {
+  --color-void: #0a0a0f;
+  --color-panel: #12121c;
+  --color-ink: #f4f1ff;
+  --color-acid: #c6ff00;
+  --color-hotpink: #ff2bd6;
+  --color-cyan: #00f0ff;
+  --color-violet: #7a5cff;
+  --font-display: "Unbounded", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { background: var(--color-void); overflow-x: hidden; }
+  ::selection { background: var(--color-hotpink); color: var(--color-void); }
+}
+
+/* Scanlines CRT sobre todo el sitio */
+body::after {
+  content: "";
+  position: fixed; inset: 0; z-index: 60; pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 3px);
+}
+
+main, header, footer { position: relative; z-index: 10; }

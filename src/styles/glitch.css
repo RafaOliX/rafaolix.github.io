@@ -1,0 +1,82 @@
+/* ---------- Texto glitch (GSAP anima las variables --gx, --t1...) ---------- */
+.glitch { position: relative; display: inline-block; }
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute; inset: 0;
+  opacity: 0; pointer-events: none;
+}
+.glitch::before {
+  color: var(--color-cyan);
+  transform: translateX(var(--gx, -3px));
+  clip-path: inset(var(--t1, 0%) 0 var(--b1, 60%) 0);
+}
+.glitch::after {
+  color: var(--color-hotpink);
+  transform: translateX(calc(var(--gx, 3px) * -1));
+  clip-path: inset(var(--t2, 60%) 0 var(--b2, 0%) 0);
+}
+.glitch.is-glitching::before,
+.glitch.is-glitching::after { opacity: .9; }
+
+/* ---------- Rectángulo con bordes desfasados (RGB split) ---------- */
+.glitch-rect { position: relative; isolation: isolate; }
+.glitch-rect::before,
+.glitch-rect::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  border: 2px solid; pointer-events: none;
+}
+.glitch-rect::before { border-color: var(--color-hotpink); transform: translate(10px, 10px); }
+.glitch-rect::after  { border-color: var(--color-cyan);    transform: translate(-10px, -6px); }
+.glitch-rect:hover::before { animation: rect-jitter .45s steps(4) infinite; }
+
+@keyframes rect-jitter {
+  0%   { clip-path: inset(0 0 70% 0); transform: translate(14px, 8px); }
+  25%  { clip-path: inset(40% 0 20% 0); transform: translate(6px, 14px); }
+  50%  { clip-path: inset(70% 0 0 0);  transform: translate(12px, 6px); }
+  100% { clip-path: inset(0);          transform: translate(10px, 10px); }
+}
+
+/* ---------- Tarjetas estilo neo-brutalista ---------- */
+.card {
+  --accent: var(--color-acid);
+  position: relative; display: flex; flex-direction: column; gap: .5rem;
+  min-height: 170px; padding: 1.25rem; overflow: hidden;
+  background: var(--color-panel);
+  border: 1px solid color-mix(in srgb, var(--accent) 60%, transparent);
+  transition: transform .2s steps(3), box-shadow .2s steps(3);
+}
+.card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 var(--accent);
+}
+.stack-logo {
+  position: absolute; right: .75rem; bottom: .75rem;
+  width: 5rem; height: 5rem; object-fit: contain;
+  transform: rotate(-6deg); transition: transform .3s steps(4);
+}
+.card:hover .stack-logo { transform: rotate(-14deg) scale(1.2); }
+
+.social {
+  display: grid; place-items: center; width: 3.25rem; height: 3.25rem;
+  border: 2px solid var(--color-ink);
+  box-shadow: 4px 4px 0 var(--color-hotpink);
+  transition: transform .15s steps(2), box-shadow .15s steps(2);
+}
+.social:hover { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--color-cyan); }
+
+/* ---------- Fondo: rectángulos flotantes ---------- */
+#bg-rects { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.bg-rect { position: absolute; border: 1px solid currentColor; mix-blend-mode: screen; opacity: .22; }
+
+/* ---------- Loader ---------- */
+#loader { position: fixed; inset: 0; z-index: 100; display: flex; }
+.loader-bar { flex: 1; background: var(--color-void); border-right: 1px solid rgba(255,255,255,.06); }
+#loader-ui {
+  position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: .5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .social, .stack-logo { transition: none; }
+  .glitch-rect:hover::before { animation: none; }
+}
