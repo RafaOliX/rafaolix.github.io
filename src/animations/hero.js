@@ -1,13 +1,24 @@
-import { gsap, prefersReducedMotion } from './gsap.js'
+import { gsap, SplitText, prefersReducedMotion } from './gsap.js'
+
+let split
+
+/** Deja el hero oculto mientras corre el loader (evita parpadeos). */
+export function prepHero() {
+  if (prefersReducedMotion()) return
+  gsap.set('[data-hero]', { autoAlpha: 0, y: 36 })
+  gsap.set('.photo', { clipPath: 'inset(100% 0% 0% 0%)' })
+  split = SplitText.create('.hero-title .line', { type: 'chars' })
+  gsap.set(split.chars, { yPercent: 115, rotate: 10 })
+}
 
 export function playHero() {
-  if (prefersReducedMotion()) return
+  if (prefersReducedMotion() || !split) return
 
   gsap.timeline()
-    .from('.orb-frame', { scale: 0, rotate: -120, duration: 1.1, ease: 'elastic.out(1, .6)' })
-    .from('[data-hero]:not(.orb-frame)', {
-      y: 60, opacity: 0, scale: 0.9, stagger: 0.09, duration: 0.7, ease: 'back.out(1.7)',
-    }, '-=0.7')
+    .to(split.chars, { yPercent: 0, rotate: 0, duration: 1.1, ease: 'expo.out', stagger: 0.035 })
+    .to('.photo', { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.1, ease: 'expo.inOut', clearProps: 'clipPath' }, 0.15)
+    .to('[data-hero]', { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power3.out', stagger: 0.08 }, 0.35)
 
-  gsap.to('.orb-frame', { y: -14, duration: 2.4, ease: 'sine.inOut', repeat: -1, yoyo: true })
+  gsap.to('.photo-wrap', { y: -10, duration: 2.6, ease: 'sine.inOut', repeat: -1, yoyo: true })
+  gsap.to('.photo-tag', { rotate: -2, duration: 1.8, ease: 'sine.inOut', repeat: -1, yoyo: true })
 }

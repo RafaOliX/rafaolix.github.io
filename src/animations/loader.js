@@ -1,34 +1,33 @@
 import { gsap, prefersReducedMotion } from './gsap.js'
 
-/** Loader de torres translúcidas (guiño a los comerciales de PS2). Resuelve cerca del final. */
+/** Contador + figuras que se suceden; al final, barras de color barren la pantalla (tipo intro de anime). */
 export function playLoader() {
   const loader = document.querySelector('#loader')
   if (!loader) return Promise.resolve()
   if (prefersReducedMotion()) { loader.remove(); return Promise.resolve() }
 
-  const towers = loader.querySelector('#towers')
-  towers.innerHTML = Array.from({ length: 26 }, () => '<span class="tower"></span>').join('')
-  const els = towers.querySelectorAll('.tower')
   const count = loader.querySelector('#loader-count')
+  const shapes = loader.querySelectorAll('#loader-shape > *')
+  const panels = gsap.utils.toArray('.lp').reverse() // tinta primero, lima al final
 
-  const idle = gsap.to(els, {
-    scaleY: () => gsap.utils.random(0.25, 1),
-    duration: () => gsap.utils.random(0.35, 0.8),
-    ease: 'sine.inOut', repeat: -1, yoyo: true, repeatRefresh: true,
-    stagger: { each: 0.04, from: 'center' },
-  })
+  gsap.set(shapes, { autoAlpha: 0, transformOrigin: '50% 50%' })
 
   return new Promise((resolve) => {
     const state = { v: 0 }
-    gsap.timeline({ onComplete: () => loader.remove() })
-      .to(state, {
-        v: 100, duration: 1.8, ease: 'power2.inOut',
-        onUpdate: () => { count.textContent = String(Math.round(state.v)).padStart(3, '0') },
-      })
-      .add(() => idle.kill())
-      .to(els, { scaleY: 2, duration: 0.5, ease: 'expo.in', stagger: { each: 0.03, from: 'edges' } })
-      .to('#loader-ui', { autoAlpha: 0, scale: 1.4, duration: 0.35 }, '<')
-      .to(loader, { autoAlpha: 0, duration: 0.5 }, '-=0.15')
-      .call(resolve, null, '-=0.4')
+    const tl = gsap.timeline({ onComplete: () => loader.remove() })
+
+    tl.to(state, {
+      v: 100, duration: 1.7, ease: 'power2.inOut',
+      onUpdate: () => { count.textContent = String(Math.round(state.v)).padStart(3, '0') },
+    }, 0)
+
+    shapes.forEach((s, i) => {
+      tl.fromTo(s, { autoAlpha: 1, scale: 0.2, rotation: -90 },
+        { scale: 1, rotation: 0, duration: 0.45, ease: 'back.out(2)', immediateRender: false }, i * 0.55)
+        .to(s, { autoAlpha: 0, scale: 1.6, duration: 0.12 }, i * 0.55 + 0.45)
+    })
+
+    tl.to(panels, { yPercent: -100, duration: 0.85, ease: 'expo.inOut', stagger: 0.12 })
+      .call(resolve, null, '<+=0.35')
   })
 }
