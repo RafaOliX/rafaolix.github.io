@@ -1,25 +1,34 @@
 import { gsap, prefersReducedMotion } from './gsap.js'
 
-/** Resuelve la promesa cuando el loader casi termina, para solapar con el hero. */
+/** Loader de torres translúcidas (guiño a los comerciales de PS2). Resuelve cerca del final. */
 export function playLoader() {
   const loader = document.querySelector('#loader')
   if (!loader) return Promise.resolve()
   if (prefersReducedMotion()) { loader.remove(); return Promise.resolve() }
 
-  return new Promise((resolve) => {
-    const count = loader.querySelector('#loader-count')
-    const bars = loader.querySelectorAll('.loader-bar')
-    const ui = loader.querySelector('#loader-ui')
-    const state = { v: 0 }
+  const towers = loader.querySelector('#towers')
+  towers.innerHTML = Array.from({ length: 26 }, () => '<span class="tower"></span>').join('')
+  const els = towers.querySelectorAll('.tower')
+  const count = loader.querySelector('#loader-count')
 
+  const idle = gsap.to(els, {
+    scaleY: () => gsap.utils.random(0.25, 1),
+    duration: () => gsap.utils.random(0.35, 0.8),
+    ease: 'sine.inOut', repeat: -1, yoyo: true, repeatRefresh: true,
+    stagger: { each: 0.04, from: 'center' },
+  })
+
+  return new Promise((resolve) => {
+    const state = { v: 0 }
     gsap.timeline({ onComplete: () => loader.remove() })
       .to(state, {
-        v: 100, duration: 1.6, ease: 'steps(24)',
+        v: 100, duration: 1.8, ease: 'power2.inOut',
         onUpdate: () => { count.textContent = String(Math.round(state.v)).padStart(3, '0') },
       })
-      .to(count, { x: () => gsap.utils.random(-12, 12), skewX: 20, duration: 0.06, repeat: 5, yoyo: true })
-      .to(ui, { opacity: 0, duration: 0.2 })
-      .to(bars, { yPercent: -100, stagger: 0.07, duration: 0.7, ease: 'expo.inOut' })
-      .call(resolve, null, '-=0.5')
+      .add(() => idle.kill())
+      .to(els, { scaleY: 2, duration: 0.5, ease: 'expo.in', stagger: { each: 0.03, from: 'edges' } })
+      .to('#loader-ui', { autoAlpha: 0, scale: 1.4, duration: 0.35 }, '<')
+      .to(loader, { autoAlpha: 0, duration: 0.5 }, '-=0.15')
+      .call(resolve, null, '-=0.4')
   })
 }
