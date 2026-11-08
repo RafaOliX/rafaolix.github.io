@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>rafaolix | Rafael Olivares · Ingeniero en Informática</title>
   <meta name="description" content="Portafolio de proyectos: Reconocimiento Facial, Robótica con Arduino y Desarrollo Web Full Stack.">
-  <meta name="theme-color" content="#1f8ef0">
+  <meta name="theme-color" content="#efe8d8">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rafaolix.github.io/">
   <meta property="og:title" content="Rafael Olivares | Ingeniero en Informática">
@@ -15,7 +15,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RM8RE26D8H"></script>
@@ -27,71 +27,97 @@
   </script>
 </head>
 
-<body class="font-sans text-navy antialiased">
+<body class="font-sans antialiased">
   <div id="loader" aria-hidden="true">
-    <div id="towers"></div>
-    <div id="loader-ui">
+    <div class="lp lp--lime"></div>
+    <div class="lp lp--violet"></div>
+    <div class="lp lp--vermilion"></div>
+    <div class="lp lp--ink">
+      <svg id="loader-shape" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="44"/>
+        <polygon points="50,6 95,92 5,92"/>
+        <rect x="8" y="8" width="84" height="84"/>
+      </svg>
       <p id="loader-count">000</p>
-      <p class="loader-label">LOADING RAFAOLIX</p>
+      <p class="loader-label">Cargando · rafaolix</p>
     </div>
   </div>
 
-  <div id="scene" aria-hidden="true">
-    <div class="sun"></div>
-    <div id="clouds"></div>
-  </div>
-  <canvas id="gl" aria-hidden="true"></canvas>
+  <div id="shapes" aria-hidden="true"></div>
+  <div id="shapes-front" aria-hidden="true"></div>
 
-  <header class="nav-wrap">
-    <nav class="nav-glass glass" aria-label="Secciones">
-      <a href="#hero">Inicio</a>
-      <a href="#logros">Logros</a>
-      <a href="#experiencia">Experiencia</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#stack">Stack</a>
+  <header class="nav">
+    <a href="#hero">rafaolix//</a>
+    <nav aria-label="Secciones">
+      <a href="#logros">01 Logros</a>
+      <a href="#experiencia">02 Experiencia</a>
+      <a href="#proyectos">03 Proyectos</a>
+      <a href="#stack">04 Stack</a>
     </nav>
   </header>
 
+  <aside class="rail" aria-hidden="true">
+    <div class="rail-track"><i class="rail-fill"></i><span class="rail-dot"></span></div>
+    <span class="rail-label">00</span>
+  </aside>
+
   <main>
-    <section id="hero" class="hero">
-      <div class="hero-inner">
-        <div class="orb-frame" data-hero>
-          <img src="/assets/olivares1.jpg" alt="Rafael Olivares sonriendo" />
+    <section id="hero" class="hero" data-n="00" data-accent="var(--color-vermilion)">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-hero>Portafolio · 2026</p>
+          <h1 class="hero-title" aria-label="Rafael Olivares">
+            <span class="line" aria-hidden="true">Rafael</span>
+            <span class="line" aria-hidden="true">Olivares</span>
+          </h1>
+          <p class="role" data-hero>Rafael Andrés Olivares Criollo — Ingeniero en Informática</p>
+          <p class="lead" data-hero>
+            Un apasionado de la programación y el desarrollo web. Aquí encontrarás mis certificaciones,
+            experiencia, proyectos y redes sociales. ¡Espero que disfrutes del contenido!
+          </p>
+          <div class="mb-6 flex flex-wrap items-center gap-4" data-hero>
+            <a class="btn" href="#proyectos">Ver proyectos ↓</a>
+            <a class="mail" href="mailto:rafaolix59@gmail.com">rafaolix59@gmail.com</a>
+          </div>
+          <div id="socials" class="flex flex-wrap gap-3" data-hero></div>
         </div>
-        <p class="chip glass" data-hero>@rafaolix <span aria-hidden="true">✓</span></p>
 
-        <h1 class="sr-only">Rafael Andrés Olivares Criollo</h1>
-        <pre id="ascii-title" class="ascii" aria-hidden="true" data-hero></pre>
-
-        <p class="name" data-hero>Rafael Andrés Olivares Criollo</p>
-        <p class="subtitle" data-hero>// Ingeniero en Informática</p>
-        <a class="mail" data-hero href="mailto:rafaolix59@gmail.com">rafaolix59@gmail.com</a>
-
-        <div id="socials" class="flex flex-wrap justify-center gap-3" data-hero></div>
-
-        <p class="lead" data-hero>
-          Un apasionado de la programación y el desarrollo web. Aquí encontrarás mis certificaciones,
-          experiencia, proyectos y redes sociales. ¡Espero que disfrutes del contenido!
-        </p>
-        <a class="btn-gel" data-hero href="#proyectos">Ver proyectos ↓</a>
+        <div class="photo-wrap">
+          <div class="tunnel" aria-hidden="true"></div>
+          <div class="photo"><img src="/assets/olivares1.jpg" alt="Rafael Olivares sonriendo" /></div>
+          <span class="photo-tag" data-hero>@rafaolix ✓</span>
+        </div>
       </div>
-      <pre id="ascii-wave" class="ascii ascii-wave" aria-hidden="true"></pre>
     </section>
 
-    <section id="logros" class="section">
-      <p class="eyebrow" data-reveal>[ 01 // logros ]</p>
+    <div class="bands" aria-hidden="true">
+      <div class="band" data-kind="tri" data-color="vermilion" data-dir="1"></div>
+      <div class="band" data-kind="circle" data-color="violet" data-dir="-1"></div>
+      <div class="band" data-kind="square" data-color="lime" data-dir="1"></div>
+    </div>
+
+    <section id="logros" class="section" data-n="01" data-accent="var(--color-violet)">
+      <span class="bignum" data-drift aria-hidden="true">01</span>
+      <p class="eyebrow" data-reveal style="--e:var(--color-violet)">Logros</p>
       <h2 class="title" data-split>Certificaciones</h2>
-      <div id="certs" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-skew></div>
+      <div id="certs" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-skew></div>
     </section>
 
-    <section id="experiencia" class="section">
-      <p class="eyebrow" data-reveal>[ 02 // experiencia ]</p>
+    <section id="experiencia" class="section section--ink" data-n="02" data-accent="var(--color-lime)">
+      <span class="bignum" data-drift aria-hidden="true">02</span>
+      <p class="eyebrow" data-reveal style="--e:var(--color-lime)">Experiencia</p>
       <h2 class="title" data-split>Experiencia</h2>
       <div id="exp" class="grid gap-6" data-skew></div>
     </section>
 
-    <section id="proyectos" class="section">
-      <p class="eyebrow" data-reveal>[ 03 // proyectos ]</p>
+    <div class="bands" aria-hidden="true">
+      <div class="band" data-kind="half" data-color="pink" data-dir="-1"></div>
+      <div class="band" data-kind="tri" data-color="violet" data-dir="1"></div>
+    </div>
+
+    <section id="proyectos" class="section" data-n="03" data-accent="var(--color-pink)">
+      <span class="bignum" data-drift aria-hidden="true">03</span>
+      <p class="eyebrow" data-reveal style="--e:var(--color-pink)">Proyectos</p>
       <h2 class="title" data-split>Proyectos</h2>
       <div id="projects" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-skew></div>
     </section>
@@ -100,16 +126,17 @@
       <div class="marquee" id="marquee"></div>
     </div>
 
-    <section id="stack" class="section">
-      <p class="eyebrow" data-reveal>[ 04 // stack ]</p>
+    <section id="stack" class="section" data-n="04" data-accent="var(--color-vermilion)">
+      <span class="bignum" data-drift aria-hidden="true">04</span>
+      <p class="eyebrow" data-reveal>Stack</p>
       <h2 class="title" data-split>Tecnologías</h2>
-      <div id="stack-grid" class="grid grid-cols-2 gap-5 lg:grid-cols-4" data-skew></div>
+      <div id="stack-grid" class="grid grid-cols-2 gap-6 lg:grid-cols-4" data-skew></div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="hills" aria-hidden="true"></div>
-    <p>© <span id="year"></span> Rafael Olivares · hecho con Vite, GSAP, Three.js y mucho cielo azul</p>
+  <footer class="footer" data-n="05" data-accent="var(--color-ink)">
+    <a class="footer-cta" href="mailto:rafaolix59@gmail.com">¿Hablamos? →</a>
+    <small>© <span id="year"></span> Rafael Olivares · Vite · GSAP · Tailwind</small>
   </footer>
 
   <script type="module" src="/src/main.js"></script>
