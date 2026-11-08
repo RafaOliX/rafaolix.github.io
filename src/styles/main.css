@@ -1,23 +1,22 @@
 @import "tailwindcss";
-@import "./aero.css";
+@import "./ink.css";
 
 @theme {
-  --color-navy: #052a5e;
-  --color-deep: #083d9c;
-  --color-sky: #2ea8ff;
-  --color-aqua: #5ef0ff;
-  --color-grass: #7bd63a;
-  --color-leaf: #1f9d4a;
-  --color-sun: #fff2a8;
-  --color-foam: #f2fbff;
-  --font-sans: "Nunito", "Segoe UI", system-ui, sans-serif;
-  --font-display: "Nunito", "Segoe UI", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-paper: #efe8d8;
+  --color-card: #fbf7ec;
+  --color-ink: #15110e;
+  --color-vermilion: #ff4b1f;
+  --color-violet: #5a31f4;
+  --color-lime: #c9f23a;
+  --color-pink: #ff7bbd;
+  --font-sans: "Bricolage Grotesque", "Helvetica Neue", system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
 }
 
 @layer base {
   html { scroll-behavior: smooth; }
-  body { margin: 0; background: #1f8ef0; overflow-x: hidden; }
-  ::selection { background: var(--color-aqua); color: var(--color-navy); }
-  :focus-visible { outline: 3px solid var(--color-sun); outline-offset: 3px; }
+  body { margin: 0; position: relative; background: var(--color-paper); color: var(--color-ink); overflow-x: clip; }
+  ::selection { background: var(--color-vermilion); color: var(--color-paper); }
+  :focus-visible { outline: 3px solid var(--color-violet); outline-offset: 3px; }
 }
