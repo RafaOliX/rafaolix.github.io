@@ -1,18 +1,19 @@
 {
-  "name": "midu-links",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "rafaolix-portfolio",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
   "scripts": {
-    "build:styles": "pnpx @tailwindcss/cli -i ./input.css -o ./assets/output.css --watch"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --host"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.8.0",
   "dependencies": {
-    "@midudev/tailwind-animations": "^0.2.0",
-    "@tailwindcss/cli": "^4.1.5",
-    "tailwindcss": "^4.1.5"
+    "gsap": "^3.13.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "tailwindcss": "^4.1.0",
+    "vite": "^7.0.0"
   }
 }
