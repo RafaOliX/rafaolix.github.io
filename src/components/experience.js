@@ -6,13 +6,13 @@ export function renderExperience(root) {
   root.innerHTML = experiences.map(({ company, role, period, logo, url, bullets, gallery }) => `
     <article class="card card--static p-6 md:p-8">
       <div class="flex flex-col gap-6 md:flex-row">
-        <img class="size-28 shrink-0 rounded-2xl bg-white/80 object-contain p-3"
+        <img class="size-24 shrink-0 rounded-xl border-2 border-ink bg-white object-contain p-3"
              src="${base}assets/logos/${logo}" alt="Logo de ${company}" loading="lazy" />
         <div class="flex-1">
-          <h3 class="font-display text-2xl font-black md:text-3xl">${role}</h3>
-          <p class="font-mono text-sm opacity-80">${company} · ${period}</p>
-          ${url ? `<a class="btn-gel btn-gel--sm mt-3" href="${url}" target="_blank" rel="noopener">Visitar sitio ↗</a>` : ''}
-          <ul class="bullets mt-5 grid gap-2 text-sm font-semibold md:text-base">
+          <h3 class="font-display text-2xl font-extrabold tracking-tight md:text-4xl">${role}</h3>
+          <p class="mt-1 font-mono text-sm">${company} · ${period}</p>
+          ${url ? `<a class="btn btn--sm mt-3" href="${url}" target="_blank" rel="noopener">Visitar sitio ↗</a>` : ''}
+          <ul class="bullets mt-5 grid gap-2 text-sm font-medium md:text-base">
             ${bullets.map((b) => `<li>${b}</li>`).join('')}
           </ul>
         </div>
