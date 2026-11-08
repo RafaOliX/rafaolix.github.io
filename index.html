@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RafaOliX — Portafolio</title>
+    <meta name="description" content="Portafolio de RafaOliX" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Unbounded:wght@400;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+
+  <body>
+    <!-- LOADER -->
+    <div id="loader" class="fixed inset-0 z-[100] flex flex-col">
+      <div class="loader-bar flex-1 bg-hyper origin-left"></div>
+      <div class="loader-bar flex-1 bg-acid origin-right"></div>
+      <div class="loader-bar flex-1 bg-cyan origin-left"></div>
+      <div class="loader-bar flex-1 bg-violet origin-right"></div>
+      <div class="absolute bottom-6 right-6 font-display text-6xl font-black text-void mix-blend-difference">
+        <span id="loader-count">0</span>%
+      </div>
+    </div>
+
+    <!-- NAV -->
+    <header class="fixed top-0 inset-x-0 z-50 flex justify-between items-center px-6 py-4 mix-blend-difference">
+      <a href="#hero" class="font-display font-black text-xl">RAFA//OLIX</a>
+      <nav class="flex gap-6 text-sm uppercase">
+        <a href="#about" class="hover:text-acid">About</a>
+        <a href="#projects" class="hover:text-acid">Projects</a>
+        <a href="#contact" class="hover:text-acid">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="hero" class="relative min-h-screen flex items-center px-6 overflow-hidden">
+        <div class="glitch-rect bg-hyper w-64 h-24 top-[18%] right-[8%]" data-glitch-rect data-parallax="-80"></div>
+        <div class="glitch-rect bg-cyan w-40 h-40 bottom-[15%] left-[6%]" data-glitch-rect data-parallax="60"></div>
+        <div class="glitch-rect glitch-rect--outline text-acid w-72 h-32 top-[55%] right-[20%]" data-glitch-rect data-parallax="-40"></div>
+
+        <div class="relative z-10">
+          <p class="text-acid mb-4 uppercase tracking-widest" data-hero-line>&gt; hello, world_</p>
+          <h1 class="font-display font-black text-[clamp(3rem,12vw,10rem)] leading-[.9] uppercase">
+            <span class="glitch" data-text="Rafa" data-hero-line>Rafa</span><br />
+            <span class="glitch" data-text="OliX" data-hero-line>OliX</span>
+          </h1>
+          <p class="mt-6 max-w-md text-bone/70" data-hero-line>
+            Tu descripción corta aquí. Developer · Creator · Glitch enjoyer.
+          </p>
+          <a href="#projects" class="btn-hyper mt-8" data-hero-line>Ver proyectos</a>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="relative min-h-screen px-6 py-32">
+        <h2 class="font-display font-black text-5xl md:text-7xl uppercase text-acid" data-reveal>About</h2>
+        <p class="mt-8 max-w-2xl text-lg" data-reveal>
+          Pega aquí tu texto de legacy/index.old.html
+        </p>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="relative min-h-screen px-6 py-32 bg-ink">
+        <h2 class="font-display font-black text-5xl md:text-7xl uppercase text-hyper" data-reveal>Projects</h2>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <article class="border-2 border-cyan p-6 hover:bg-cyan hover:text-void transition-colors" data-reveal>
+            <h3 class="font-display font-extrabold text-2xl">Proyecto 01</h3>
+            <p class="mt-2 text-sm">Descripción.</p>
+          </article>
+          <article class="border-2 border-acid p-6 hover:bg-acid hover:text-void transition-colors" data-reveal>
+            <h3 class="font-display font-extrabold text-2xl">Proyecto 02</h3>
+            <p class="mt-2 text-sm">Descripción.</p>
+          </article>
+          <article class="border-2 border-hyper p-6 hover:bg-hyper hover:text-void transition-colors" data-reveal>
+            <h3 class="font-display font-extrabold text-2xl">Proyecto 03</h3>
+            <p class="mt-2 text-sm">Descripción.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="relative min-h-[70vh] px-6 py-32">
+        <h2 class="font-display font-black text-5xl md:text-7xl uppercase text-cyan" data-reveal>Contact</h2>
+        <a href="mailto:tu@email.com" class="btn-hyper mt-10" data-reveal>tu@email.com</a>
+      </section>
+    </main>
+  </body>
+</html>
