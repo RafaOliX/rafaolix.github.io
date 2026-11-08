@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>rafaolix | Rafael Olivares · Ingeniero en Informática</title>
   <meta name="description" content="Portafolio de proyectos: Reconocimiento Facial, Robótica con Arduino y Desarrollo Web Full Stack.">
+  <meta name="theme-color" content="#1f8ef0">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rafaolix.github.io/">
   <meta property="og:title" content="Rafael Olivares | Ingeniero en Informática">
@@ -14,7 +15,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Unbounded:wght@500;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RM8RE26D8H"></script>
@@ -26,69 +27,89 @@
   </script>
 </head>
 
-<body class="bg-void text-ink font-mono antialiased">
+<body class="font-sans text-navy antialiased">
   <div id="loader" aria-hidden="true">
-    <div class="loader-bar"></div><div class="loader-bar"></div><div class="loader-bar"></div>
-    <div class="loader-bar"></div><div class="loader-bar"></div>
+    <div id="towers"></div>
     <div id="loader-ui">
-      <p id="loader-count" class="font-display text-7xl text-acid">000</p>
-      <p class="text-xs tracking-[.4em] text-cyan">BOOTING RAFAOLIX.EXE</p>
+      <p id="loader-count">000</p>
+      <p class="loader-label">LOADING RAFAOLIX</p>
     </div>
   </div>
 
-  <div id="bg-rects" aria-hidden="true"></div>
+  <div id="scene" aria-hidden="true">
+    <div class="sun"></div>
+    <div id="clouds"></div>
+  </div>
+  <canvas id="gl" aria-hidden="true"></canvas>
 
-  <header class="fixed top-0 inset-x-0 z-40 flex justify-between px-6 py-4 text-xs uppercase tracking-widest mix-blend-difference">
-    <a href="#hero" class="font-bold">rafaolix//</a>
-    <nav class="flex gap-5">
-      <a href="#logros" class="hover:text-acid">Logros</a>
-      <a href="#stack" class="hover:text-acid">Stack</a>
+  <header class="nav-wrap">
+    <nav class="nav-glass glass" aria-label="Secciones">
+      <a href="#hero">Inicio</a>
+      <a href="#logros">Logros</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#stack">Stack</a>
     </nav>
   </header>
 
   <main>
-    <section id="hero" class="min-h-dvh grid place-items-center px-6 py-28">
-      <div class="flex flex-col items-center text-center gap-6 max-w-2xl">
-        <div class="hero-photo glitch-rect w-56 sm:w-72 aspect-[4/5]">
-          <img src="/assets/olivares1.jpg" alt="Rafael Olivares sonriendo"
-               class="size-full object-cover object-top grayscale contrast-125 hover:grayscale-0 transition" />
+    <section id="hero" class="hero">
+      <div class="hero-inner">
+        <div class="orb-frame" data-hero>
+          <img src="/assets/olivares1.jpg" alt="Rafael Olivares sonriendo" />
         </div>
+        <p class="chip glass" data-hero>@rafaolix <span aria-hidden="true">✓</span></p>
 
-        <p data-hero class="font-mono text-cyan border border-cyan/60 px-3 py-1 text-sm">@rafaolix ✓</p>
+        <h1 class="sr-only">Rafael Andrés Olivares Criollo</h1>
+        <pre id="ascii-title" class="ascii" aria-hidden="true" data-hero></pre>
 
-        <h1 data-hero class="glitch font-display font-extrabold text-4xl sm:text-6xl leading-none uppercase"
-            data-text="Rafael Olivares">Rafael Olivares</h1>
+        <p class="name" data-hero>Rafael Andrés Olivares Criollo</p>
+        <p class="subtitle" data-hero>// Ingeniero en Informática</p>
+        <a class="mail" data-hero href="mailto:rafaolix59@gmail.com">rafaolix59@gmail.com</a>
 
-        <p data-hero class="font-display text-acid text-lg sm:text-xl uppercase">Ingeniero en Informática</p>
-        <a data-hero href="mailto:rafaolix59@gmail.com" class="text-sm underline decoration-hotpink underline-offset-4">rafaolix59@gmail.com</a>
+        <div id="socials" class="flex flex-wrap justify-center gap-3" data-hero></div>
 
-        <div id="socials" data-hero class="flex flex-wrap justify-center gap-4"></div>
-
-        <p data-hero class="text-balance opacity-80">
+        <p class="lead" data-hero>
           Un apasionado de la programación y el desarrollo web. Aquí encontrarás mis certificaciones,
-          proyectos y redes sociales. ¡Espero que disfrutes del contenido!
+          experiencia, proyectos y redes sociales. ¡Espero que disfrutes del contenido!
         </p>
+        <a class="btn-gel" data-hero href="#proyectos">Ver proyectos ↓</a>
       </div>
+      <pre id="ascii-wave" class="ascii ascii-wave" aria-hidden="true"></pre>
     </section>
 
-    <section id="logros" class="px-6 py-24 max-w-6xl mx-auto">
-      <h2 data-reveal class="font-display font-extrabold text-4xl sm:text-5xl uppercase mb-10">
-        <span class="text-hotpink">//</span> Certificaciones
-      </h2>
-      <div id="certs" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
-      <!-- TODO commits siguientes: Experiencias y Proyectos -->
+    <section id="logros" class="section">
+      <p class="eyebrow" data-reveal>[ 01 // logros ]</p>
+      <h2 class="title" data-split>Certificaciones</h2>
+      <div id="certs" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-skew></div>
     </section>
 
-    <section id="stack" class="px-6 py-24 max-w-6xl mx-auto">
-      <h2 data-reveal class="font-display font-extrabold text-4xl sm:text-5xl uppercase mb-10">
-        <span class="text-cyan">//</span> Tecnologías
-      </h2>
-      <div id="stack-grid" class="grid gap-5 grid-cols-2 lg:grid-cols-4"></div>
+    <section id="experiencia" class="section">
+      <p class="eyebrow" data-reveal>[ 02 // experiencia ]</p>
+      <h2 class="title" data-split>Experiencia</h2>
+      <div id="exp" class="grid gap-6" data-skew></div>
+    </section>
+
+    <section id="proyectos" class="section">
+      <p class="eyebrow" data-reveal>[ 03 // proyectos ]</p>
+      <h2 class="title" data-split>Proyectos</h2>
+      <div id="projects" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-skew></div>
+    </section>
+
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee" id="marquee"></div>
+    </div>
+
+    <section id="stack" class="section">
+      <p class="eyebrow" data-reveal>[ 04 // stack ]</p>
+      <h2 class="title" data-split>Tecnologías</h2>
+      <div id="stack-grid" class="grid grid-cols-2 gap-5 lg:grid-cols-4" data-skew></div>
     </section>
   </main>
 
-  <footer class="px-6 py-10 text-center text-xs opacity-60">
-    © <span id="year"></span> Rafael Olivares — built with Vite · GSAP · Tailwind
+  <footer class="footer">
+    <div class="hills" aria-hidden="true"></div>
+    <p>© <span id="year"></span> Rafael Olivares · hecho con Vite, GSAP, Three.js y mucho cielo azul</p>
   </footer>
 
   <script type="module" src="/src/main.js"></script>
