@@ -33,7 +33,7 @@ const SPECS = [
   { k: 'arrow',  c: 'ink',       x: 8,  y: 86, s: 110, f: 0.2,   r: 0,   m: 'o' },
   { k: 'cross',  c: 'vermilion', x: 88, y: 92, s: 60,  f: 0.3,   r: 90 },
   // Capa frontal (multiply): contornos grandes que cruzan el contenido
-  { k: 'circle', c: 'pink',      x: 50, y: 10, s: 220, f: 0.5,   r: 0,   m: 'o', front: true },
+  //{ k: 'circle', c: 'pink',      x: 50, y: 10, s: 220, f: 0.5,   r: 0,   m: 'o', front: true },
   { k: 'tri',    c: 'vermilion', x: 72, y: 42, s: 150, f: -0.5,  r: 360, m: 'o', front: true },
   { k: 'wave',   c: 'violet',    x: 18, y: 66, s: 200, f: 0.45,  r: 0,   m: 'o', front: true },
 ]

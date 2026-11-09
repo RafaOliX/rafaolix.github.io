@@ -61,12 +61,8 @@
   }
 
   /* ============ Hero ============ */
+  /* (eliminado .hero::before → era el círculo punteado del fondo) */
   .hero { position: relative; min-height: 100dvh; display: grid; align-items: center; max-width: 80rem; margin: 0 auto; padding: 7rem 1.5rem 4rem; }
-  .hero::before {
-    content: ""; position: absolute; right: -3rem; top: 5rem; width: 22rem; height: 22rem; z-index: 0; opacity: .3; pointer-events: none;
-    background: radial-gradient(circle, var(--color-ink) 22%, transparent 24%) 0 0 / 16px 16px;
-    -webkit-mask: radial-gradient(circle, #000 15%, transparent 70%); mask: radial-gradient(circle, #000 15%, transparent 70%);
-  }
   .hero-grid { position: relative; z-index: 2; display: grid; gap: 3rem; align-items: center; }
   @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.3fr .7fr; } }
 
@@ -116,6 +112,7 @@
   }
 
   /* ============ Tarjetas ============ */
+    /* ============ Tarjetas ============ */
   .card {
     --accent: var(--color-vermilion);
     position: relative; display: flex; flex-direction: column; gap: .5rem; min-height: 160px; padding: 1.25rem;
@@ -126,19 +123,68 @@
   .card:hover { transform: translate(-4px, -4px) rotate(-.6deg); box-shadow: 10px 10px 0 var(--accent); }
   .card--static:hover { transform: none; box-shadow: 6px 6px 0 var(--accent); }
 
+  /* Etiqueta superior */
   .tag {
     display: inline-block; width: fit-content; padding: .1rem .7rem; font-family: var(--font-mono); font-size: .68rem; font-weight: 500;
     text-transform: uppercase; background: var(--tag, var(--color-lime)); color: var(--color-ink);
     border: 2px solid var(--color-ink); border-radius: 999px;
+    margin-bottom: auto;
   }
+
+  /* Contenedor inferior (Texto + Burbuja) */
+  .card-footer {
+    display: flex;
+    flex-direction: column; /* En móvil: uno debajo del otro */
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* En pantallas más grandes (tablets/PC), se ponen lado a lado */
+  @media (min-width: 450px) {
+    .card-footer {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  .card-title {
+    font-family: var(--font-display);
+    font-size: 1.35rem; 
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    word-break: keep-all; /* Evita que se corten las palabras a la mitad */
+    overflow-wrap: normal;
+  }
+
+  /* La burbuja (círculo) */
   .bubble {
-    position: absolute; right: .9rem; bottom: .9rem; display: grid; place-items: center; width: 4.8rem; height: 4.8rem;
-    background: var(--accent); border: 2.5px solid var(--color-ink); border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+    display: grid; 
+    place-items: center; 
+    width: 3.8rem; 
+    height: 3.8rem;
+    background: var(--accent); 
+    border: 2.5px solid var(--color-ink); 
+    border-radius: 50%;
     transition: transform .45s cubic-bezier(.2,.9,.3,1.5);
   }
-  .bubble img, .bubble svg { width: 64%; height: 64%; object-fit: contain; }
-  .card:hover .bubble { transform: rotate(-18deg) scale(1.12); }
-
+  
+  .bubble img, .bubble svg { 
+    width: 65%; 
+    height: 65%; 
+    object-fit: contain; 
+  }
+  
+  .card:hover .bubble { 
+    transform: rotate(-18deg) scale(1.12); 
+  } 
   /* ============ Botones ============ */
   .btn, .nav-btn {
     display: inline-flex; align-items: center; justify-content: center; gap: .5rem; cursor: pointer; font-weight: 700; text-decoration: none;
@@ -157,22 +203,49 @@
   }
   .social:hover { transform: translate(-2px, -3px) rotate(-6deg); box-shadow: 6px 6px 0 var(--color-vermilion); }
 
-  /* ============ Experiencia / Proyectos ============ */
+  
+
+    /* ============ Experiencia / Proyectos ============ */
   .bullets { margin: 0; padding: 0; list-style: none; }
   .bullets li { position: relative; padding-left: 1.4rem; }
   .bullets li::before { content: ""; position: absolute; left: .1rem; top: .5em; width: .5rem; height: .5rem; background: var(--color-vermilion); transform: rotate(45deg); }
 
+  /* Foto de la galería de Experiencia: marco fijo 4/3, la imagen se ve entera.
+     Si prefieres que rellene y recorte, cambia "contain" por "cover". */
   .shot {
-    width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 2.5px solid var(--color-ink); border-radius: .8rem;
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    background: var(--color-paper);
+    border: 2.5px solid var(--color-ink);
+    border-radius: .8rem;
     transition: transform .4s cubic-bezier(.2,.9,.3,1.4);
   }
   .shot:hover { transform: scale(1.05) rotate(-1.5deg); }
 
+  /* Escenario de Proyectos: la imagen/video siempre dentro del marco. */
   .stage {
-    position: relative; height: 15rem; display: grid; place-items: center; overflow: hidden;
-    background: var(--color-ink); border: 2.5px solid var(--color-ink); border-radius: .8rem;
+    position: relative;
+    aspect-ratio: 4 / 3;
+    max-height: 18rem;
+    overflow: hidden;
+    background: var(--color-paper);
+    border: 2.5px solid var(--color-ink);
+    border-radius: .8rem;
+    isolation: isolate;
   }
-  .stage img, .stage video { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .stage img,
+  .stage video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   /* ← cambia a "cover" si prefieres recorte tipo thumbnail */
+    display: block;
+  }
+  .stage img.hidden,
+  .stage video.hidden { display: none; }
 
   /* ============ Bandas de figuras repetidas ============ */
   .bands { display: grid; gap: .9rem; padding: 2rem 0; overflow: clip; position: relative; z-index: 10; }
@@ -198,14 +271,14 @@
     font-size: clamp(2.6rem, 10vw, 8rem); line-height: .9; letter-spacing: -.045em; transition: color .2s;
   }
   .footer-cta:hover { color: var(--color-paper); }
-  .footer small { display: block; margin-top: 3.5rem; font-family: var(--font-mono); font-size: .8rem; }
+  .footer small { display: block; margin-top: 3.5rem; font-family: var(--font-mono); font-size: .8rem; color:#FAF9F6}
 
   /* ============ Loader ============ */
   #loader { position: fixed; inset: 0; z-index: 100; }
   .lp { position: absolute; inset: 0; }
   .lp--lime { background: var(--color-lime); }
   .lp--violet { background: var(--color-violet); }
-  .lp--vermilion { background: var(--color-vermilion); }
+  .lp--vermilion { background: var(--color-vermilion); }   /* ahora se ve azul, mismo nombre de clase */
   .lp--ink { display: grid; place-content: center; justify-items: center; gap: 1.2rem; background: var(--color-ink); color: var(--color-paper); }
   #loader-count { margin: 0; font-weight: 800; font-size: clamp(5rem, 20vw, 14rem); line-height: .8; letter-spacing: -.06em; font-variant-numeric: tabular-nums; }
   .loader-label { margin: 0; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .3em; text-transform: uppercase; }

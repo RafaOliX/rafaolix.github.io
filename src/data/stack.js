@@ -1,12 +1,12 @@
 // logo = archivo en public/assets/logos | icon = símbolo en public/assets/sprite.svg
 export const stack = [
-  { name: 'Tailwind', tag: 'CSS Framework', logo: 'Tailwind_CSS.png', color: '#38bdf8' },
+  { name: 'Tailwind', tag: 'CSS Framework', logo: 'Tailwind_CSS.png', color: '#ccdeef' },
   { name: 'JavaScript', tag: 'Lenguaje', logo: 'javascript-logo.webp', color: '#facc15' },
-  { name: 'Python', tag: 'Lenguaje', logo: 'python.png', color: '#4B8BBE' },
+  { name: 'Python', tag: 'Lenguaje', logo: 'python.png', color: '#d4d6d7' },
   { name: 'CSS', tag: 'Estilos', icon: 'css', color: '#7c3aed' },
   { name: 'HTML', tag: 'Lenguaje', icon: 'html', color: '#f97316' },
-  { name: 'Git', tag: 'Control de versiones', logo: 'git.png', color: '#f1502f' },
-  { name: 'GitHub', tag: 'Repositorios', icon: 'github', color: '#f4f1ff' },
+  { name: 'Git', tag: 'Control de versiones', logo: 'git.png', color: '#d48f81' },
+  { name: 'GitHub', tag: 'Repositorios', icon: 'github', color: '#030209' },
   { name: 'SQL', tag: 'Bases de datos', logo: 'mysql.png', color: '#00ADEF' },
   { name: 'PHP', tag: 'Back End', logo: 'php.png', color: '#8993be' },
   { name: 'Excel', tag: 'Macros avanzadas', logo: 'excel.png', color: '#10b981' },

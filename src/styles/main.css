@@ -2,13 +2,20 @@
 @import "./ink.css";
 
 @theme {
+  /* Paleta original en claro (beige/paper) */
   --color-paper: #efe8d8;
-  --color-card: #fbf7ec;
-  --color-ink: #15110e;
-  --color-vermilion: #ff4b1f;
+  --color-card:  #fbf7ec;
+  --color-ink:   #15110e;
+
+  /* Acentos: morado / lima / rosa se mantienen.
+     "vermilion" ahora es AZUL (antes era naranja). Mismo nombre,
+     mismo rol, solo cambia el hex para no romper nada. */
+  --color-vermilion: #2563eb;
+
   --color-violet: #5a31f4;
-  --color-lime: #c9f23a;
-  --color-pink: #ff7bbd;
+  --color-lime:   #c9f23a;
+  --color-pink:   #ff7bbd;
+
   --font-sans: "Bricolage Grotesque", "Helvetica Neue", system-ui, sans-serif;
   --font-display: "Bricolage Grotesque", "Helvetica Neue", system-ui, sans-serif;
   --font-mono: "DM Mono", ui-monospace, monospace;

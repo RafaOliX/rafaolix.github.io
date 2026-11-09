@@ -10,7 +10,11 @@ export function renderStack(root) {
   root.innerHTML = stack.map((item) => `
     <div class="card" style="--accent:${item.color}">
       <span class="tag">${item.tag}</span>
-      <span class="relative z-10 mt-auto font-display text-2xl font-extrabold tracking-tight">${item.name}</span>
-      <span class="bubble">${logo(item)}</span>
+      
+      <div class="card-footer">
+        <span class="card-title">${item.name}</span>
+        <span class="bubble">${logo(item)}</span>
+      </div>
+      
     </div>`).join('')
 }
